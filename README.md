@@ -11,5 +11,7 @@ Usage
 
 Testing app
 
-`npm run test`
+`npm run test_count`
+
+`npm run test_filter`
 
