@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "test": "mocha  --count --filter=ry"
+    "test_count": "mocha --count",
+    "test_filter": "mocha  --filter=ry"
   },
   "keywords": [],
   "author": "",

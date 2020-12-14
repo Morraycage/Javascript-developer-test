@@ -3,7 +3,9 @@ const finalData = data.data;
 const myArgs = process.argv.slice(2);
 
 let option;
-if (myArgs[0].split('--')[1]) option = myArgs[0].split('--')[1].split('=');
+if (myArgs[0].split('--')[1]) {
+    option = myArgs[0].split('--')[1].split('=');
+}
 
 const filter = (array, indicator) => {
     return JSON.stringify(array.map(subElement => {
@@ -70,6 +72,5 @@ if (option) {
     return;
 }
 
-
-module.exports = filter(finalData, arg);
-module.exports = count(finalData);
+module.exports = filter;
+module.exports = count;
