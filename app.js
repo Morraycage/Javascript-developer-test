@@ -5,7 +5,7 @@ const myArgs = process.argv.slice(2);
 let option;
 if (myArgs[0].split('--')[1]) option = myArgs[0].split('--')[1].split('=');
 
-const deepFilter = (array, indicator) => {
+const filter = (array, indicator) => {
     return JSON.stringify(array.map(subElement => {
         let arrayBis = [];
         subElement.people.forEach((o) => {
@@ -50,7 +50,7 @@ const count = (array) => {
     });
     return JSON.stringify(finalArray, null, " ")
 };
-
+let arg;
 if (option) {
     switch (option[0]) {
         case 'count':
@@ -58,7 +58,8 @@ if (option) {
             break;
         case 'filter':
             const args = option[1];
-            console.log(deepFilter(finalData, args));
+            arg = args;
+            console.log(filter(finalData, args));
             break;
         default:
             console.log('Sorry, that is not something I know how to do.');
@@ -67,3 +68,7 @@ if (option) {
     console.log('Sorry, that is not something I know how to do.');
     return;
 }
+
+
+module.exports = filter(finalData, arg);
+module.exports = count(finalData);
