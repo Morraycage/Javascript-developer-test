@@ -45,11 +45,12 @@ const count = (array) => {
                 animals: subPeople.animals
             };
             obj.people.push(subObj);
-            finalArray.push(obj);
-        })
+        });
+        finalArray.push(obj);
     });
     return JSON.stringify(finalArray, null, " ")
 };
+
 let arg;
 if (option) {
     switch (option[0]) {
